@@ -16,9 +16,9 @@
  * limitations under the License.
  *
  *
- * Author: Ken Chan
+ * Author and Developer: Ken Chan
  * Organization: Timeleap Inc.
- * Web: https://www.timeleap.com
+ * Website: https://www.timeleap.com
  * Location: Toronto, Ontario, Canada
  * Email: ken@timeleap.com
  * Date Created: July 1, 2018 (Canada National Day)
