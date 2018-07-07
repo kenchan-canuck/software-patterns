@@ -2,15 +2,27 @@ Purpose
 =======
     This repository contains sample codes in various programming
 languages (e.g Java, Scala, etc) to implement a variety of Software 
-Patterns which would maximize code reuse.
+Patterns using a variety of more advanced programming linguistic 
+features. Some features are Generic Types and nested inner classes 
+along with popular data structures to realize a variety of Software 
+Patterns. Some sample software patterns are Inheritace, Composition, 
+Association, Builder, Method Chaining, and Generic API. 
 
-    The examples use a variety of more advanced programming linguistic
-features such as Generic Types and nested inner classes along with
-Collections to realize a variety of Software Patterns such as Inheritace, 
-Composition, Association, Builder, Method Chaining, and Generic API. 
-The goal of sharing the sample codes is to demonstrate the practicality 
-of leveraging advanced programming linguistic features and common 
-Software Patterns to maximize code reuse.
+     The goal of sharing the sample codes is to demonstrate the 
+practicality of leveraging advanced programming linguistic features 
+and common Software Patterns to increase programming efficiency 
+through code reuse and faster debugging. The experiments focus
+primarily on compiler-based languages (e.g. Java, Scala, C++) rather
+than interpreter-based languages (e.g. Python, Ruby) because there 
+are more intricacies to pass compiler-checks with advance grammar. 
+Also, compiler-based languages emphasize on early type check and
+static binding to reduce coding errors whereas interpreter-based
+languages (e.g. Python, Ruby, Javascript) emphasize on dynamic 
+binding to reduce grammatic complexity and to catch coding errors 
+at run-time. Nonetheless, there are no right answers to this topic.
+The author would like to leave the debate on the pros and cons of 
+compiler-based vs intepreter-based languages to the open source 
+community to explore.
 
     These codes are by no means optimized. They should be used as
 personal programming references only. Although all the sample codes
