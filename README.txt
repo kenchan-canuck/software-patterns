@@ -7,11 +7,16 @@ their sample codes that may demonstrate a programming pattern, style,
 best practices, or their interpretation of a design and architecture
 pattern.
 
-     YOUR CONTRIBUTIONS ARE MOST WELCOME! To practice good coding 
-hygience, please compile your sample code and and run your unit tests
-(e.g. 100% pass) before you submit (push) :)
+     YOUR CONTRIBUTIONS ARE MOST WELCOME! However, the author 
+recommends contributors to develop sample codes that are unique and 
+more "sophisticate" than other simpler sample codes found on the 
+Internet and other ebooks. Samples code that showed a combination 
+of at least a few coding patterns, coding style, and best practices 
+tend to be valuable to many developers. To practice good coding 
+hygience, please compile your sample code and run your unit tests
+successfully (e.g. with no error) before you submit (push) :)
 
-     The benefits of code sharing is to put theory into practice. 
+     The benefit of code sharing is to put theory into practice. 
 Sample codes often demonstrate the practicality of leveraging advanced
 programming linguistic features and common Software Patterns that 
 can increase programming efficiency through code reuse and faster 
