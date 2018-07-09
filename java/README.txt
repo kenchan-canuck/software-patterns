@@ -7,9 +7,10 @@ maximize code reuse.
     The examples use a variety of more advanced Java linguistic
 features such as Generic Types and nested inner classes along with
 Java Collections to realize a variety of Software Patterns such as 
-Inheritace, Composition, Association, Builder, Method Chaining, and 
-Generic API.  The goal of sharing the sample codes is to demonstrate 
-the practicality of leveraging advanced Java linguistic features 
+Inheritace, Composition, Association, Builder, Method Chaining, 
+Lambda Expression and Functional Interface, and Generic API.  
+The goal of sharing the sample codes is to demonstrate the 
+practicality of leveraging advanced Java linguistic features 
 and common Software Patterns to maximize code reuse.
 
     These codes are by no means optimized. They should be used as
