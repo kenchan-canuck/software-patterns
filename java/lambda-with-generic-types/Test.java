@@ -27,6 +27,7 @@
  */
 import java.lang.*;
 import java.util.*;
+import java.util.concurrent.*;
 
 
 public class Test { 
@@ -164,15 +165,34 @@ public class Test {
         // no parameter and a single expression
         Dummy d1 = 
             () -> System.out.println("No parameter single expression lambda expression");
+        d1.show_msg();
 
         // no parameter and a single body 
-        Dummy d2 =
-        () -> { int x=0; x++; System.out.println("No parameter and a single body with x = " + x); };
+        Runnable r1 =
+            () -> { int x=0; x++; System.out.println("No parameter and a single body with x = " + x); };
+        r1.run();
+
+        // no parameter and a single body with return type
+        Callable<Integer> c1 =
+            () -> { 
+                int y=3; 
+                System.out.println("No parameter and a single body with y = " + y);
+                return y; };
+        try {
+            int i1 = c1.call();
+            System.out.print("y = " + i1);
+        } catch (Exception ex1) {
+            ex1.printStackTrace();
+        }
 
         // a single parameter with explicit type and a single expression
+        Display display1 = (String m) -> "A lambda with one explicitly typed parameter " + m;
+        display1.show_msg(" in a single expression"); 
+
+        // a single parameter with inferred type and a single expression
         String msg = "A single parameter with explicit type and single lambda expression";
-        Display display1 = (m) -> "This example has " + m;
-        display1.show_msg(msg);
+        Display display2 = (m) -> "This example has " + m;
+        display2.show_msg(msg);
  
         // three parameters with inferred types and a single body
         int count = 10;
