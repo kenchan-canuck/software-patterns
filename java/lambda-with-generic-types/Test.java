@@ -196,14 +196,26 @@ public class Test {
  
         // three parameters with inferred types and a single body
         int count = 10;
+        String rc1 = "";
         Platform<Phone<iOS>,iOS> platform1 = (ph, os, cnt) -> { 
-            p2.set_model(""+os);
+            ph.set_model(""+os);
             String m = "I bought " + cnt + " smart phone of the same type: " + ph;
             System.out.println("I bought " + cnt + " smart phone: " + ph);
             return m;
         };
-        platform1.set_phone_os_count(p2, ios1, count); 
-          
+        rc1 = platform1.set_phone_os_count(p2, ios1, count); 
+	System.out.println("The return value is: " + rc1);
+
+        Platform<Phone<Android>,Android> platform2 = (ph, os, cnt) -> {
+            ph.set_model(""+os);
+            String m = "I bought " + cnt + " smart phone of the same type: " + ph;
+            System.out.println("I bought " + cnt + " smart phone: " + ph);
+            return m;
+        };
+        count = 20;
+        rc1 = platform2.set_phone_os_count(p1, android1, count); 
+        System.out.println("The return value is: " + rc1);
+
     }
 
 } 
