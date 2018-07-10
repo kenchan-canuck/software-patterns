@@ -1,23 +1,23 @@
 Objectives
 ==========
 
-    The author creates this open source code repository to maintain
-a catalog of sample implementations of software patterns for the open
-source commmunity.  He wants to encourage other developers to share 
-their sample codes that may demonstrate a programming pattern, style,
-best practices, or their interpretation of a design pattern or an
-architecture pattern.
+    The primary author and developer created this open source code 
+repository to maintain a catalog of sample implementations of 
+software patterns for the open source commmunity.  He wants to 
+encourage other developers to share their sample codes that may 
+demonstrate a programming pattern, style, best practices, or their 
+interpretation of a design pattern or an architecture pattern.
 
 
 Rationale
 =========
 
-    YOUR CONTRIBUTIONS ARE MOST WELCOME! However, the author 
-recommends contributors to develop sample codes that are unique and 
+    YOUR CONTRIBUTIONS ARE MOST WELCOME! However, the author recommends 
+all the contributors to develop sample codes that are unique and 
 more "sophisticate" than other simpler sample codes found on the 
-Internet and eBooks. Sample codes that show a combination 
-of at least a few coding patterns, coding styles, and best practices 
-tend to be valuable to many developers. 
+Internet and eBooks. Sample codes that show a combination of at least 
+a few coding patterns, coding styles, and best practices tend to be 
+valuable to many developers. 
 
     With a bigger catalog of quality sample codes, many developers 
 will be able to solve their problems faster and to build their 
@@ -32,12 +32,13 @@ Getting Started
 ===============
  
      This repository contains sample codes in various programming 
-languages (e.g Java, Scala, etc) to implement a variety of Software 
-Patterns using a variety of more advanced programming linguistic 
-features. Many codes use Generic Types and nested inner classes 
-along with popular data structures to realize a variety of Software
-Patterns. Some of the sample software patterns are Inheritance, 
-Composition, Association, Builder, Method Chaining, and Generic API. 
+languages (e.g Java, Scala, Kotlin, Python, Ruby, C++, Go, etc) to 
+implement a variety of Software Patterns using a variety of more 
+advanced programming linguistic features. Many codes use Generic 
+Types and nested inner classes along with popular data structures
+to realize a variety of Software Patterns. Some of the sample 
+software patterns are Inheritance, Composition, Association, Builder, 
+Method Chaining, Lambda and Functional Interface, and Generic API. 
 
     The experiments focus primarily on compiler-based languages 
 (e.g. Java, Scala, C++) rather than interpreter-based languages 
