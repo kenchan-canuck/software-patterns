@@ -4,11 +4,11 @@ Purpose
 languages to implement a variety of Software Patterns which would 
 maximize code reuse.
 
-    The examples use a variety of more advanced Java linguistic
-features such as Generic Types and nested inner classes along with
-Java Collections to realize a variety of Software Patterns such as 
-Inheritace, Composition, Association, Builder, Method Chaining, 
-Lambda Expression and Functional Interface, and Generic API.  
+    Many code samples use Generic Types and nested inner classes 
+along with popular data structures to realize a variety of Software 
+Patterns.  Some of the sample software patterns are Inheritance, 
+Composition, Association, Builder, Method Chaining, Anonymous 
+Classes, Lambda Expression and Functional Interface, and Generic API.
 The goal of sharing the sample codes is to demonstrate the 
 practicality of leveraging advanced Java linguistic features 
 and common Software Patterns to maximize code reuse.
@@ -28,11 +28,11 @@ of them. A developer should not copy or cut and paste the code as is
 into his/her own code, instead he or she should develop his or her 
 own optimized version based on his/her interpretation of the sample codes.
 
-    Finally, the author (and the developer) would like to share this
+    Finally, the primary author and developer would like to share this
 set of sample codes with the open source community as a way to give
-back. However, the author does not claim to be a guru in various programming
-languages. The author shall neither be accountable nor be liable for  
-any form of damage resulting from the use of these codes.
+back. However, he does not claim to be a guru in various programming
+languages. Therefore, all the contributors shall neither be accountable nor be 
+liable for any form of damage resulting from the use of these codes.
 
 
 Contact Information

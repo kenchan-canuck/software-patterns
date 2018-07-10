@@ -30,15 +30,16 @@ through code reuse and faster debugging.
 
 Getting Started
 ===============
- 
-     This repository contains sample codes in various programming 
-languages (e.g Java, Scala, Kotlin, Python, Ruby, C++, Go, etc) to 
-implement a variety of Software Patterns using a variety of more 
-advanced programming linguistic features. Many codes use Generic 
-Types and nested inner classes along with popular data structures
-to realize a variety of Software Patterns. Some of the sample 
-software patterns are Inheritance, Composition, Association, Builder, 
-Method Chaining, Lambda and Functional Interface, and Generic API. 
+
+    This repository contains sample codes in various programming
+languages (e.g Java, Scala, Kotlin, C++, Python, Ruby, Go, and etc) 
+to implement a variety of Software Patterns using a variety of 
+more advanced programming linguistic features.  Many code samples 
+use Generic Types and nested inner classes along with popular data 
+structures to realize a variety of Software Patterns.  Some of the 
+sample software patterns are Inheritance, Composition, Association, 
+Builder, Method Chaining, Anonymous Classes, Lambda Expression and 
+Functional Interface, and Generic API.
 
     The experiments focus primarily on compiler-based languages 
 (e.g. Java, Scala, C++) rather than interpreter-based languages 
@@ -77,10 +78,10 @@ compile your sample code and run your unit tests successfully
 Remarks
 =======
 
-    Finally, the author (and the developer) would like to share this 
+    Finally, the primary author and developer would like to share this 
 set of sample codes with the open source community as a way to give 
-back. However, the author does not claim to be a guru in various 
-programming languages. The author shall neither be accountable nor 
+back. However, he does not claim to be a guru in various programming 
+languages. Therefore, all the contributors shall neither be accountable nor 
 be liable for any form of damage resulting from the use of these codes.
 
     All the codes in this repository are and will always be under 

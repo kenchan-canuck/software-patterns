@@ -92,6 +92,78 @@ public class Test {
 
     }
 
+    public static interface Contactable<P extends Phone<M>, M extends MobileOS> {
+
+        public P call(P phone, M os);
+
+    }
+
+    public static interface Invocable<U extends UnknownClass<P,M>, P extends Phone<M>, M extends MobileOS> {
+
+        public P set(U uc, P ph);
+        public P call();
+
+    }
+
+    public static class InvocableClass<U extends UnknownClass<P,M>, P extends Phone<M>, M extends MobileOS> implements
+        Invocable<U,P,M> {
+
+        public U uc = null;
+        public P phone = null;
+
+        public InvocableClass() {}
+
+        @Override
+        public P set(U uc1, P ph1) {
+            uc = uc1;
+            phone = ph1;
+            System.out.println("Setting this InvocableClass has uc = " + uc + " and phone = " + phone);
+            return phone;
+        }
+ 
+        @Override
+        public P call() {
+            System.out.println("Calling this InvocableClass has uc = " + uc + " and phone = " + phone);
+            return phone;
+        }
+
+    }
+
+    public static interface UnknownClass<P extends Phone<M>, M extends MobileOS> {
+
+        public P set(P ph, M mdl, int cnt);
+        
+        public P call();
+
+    }
+
+    public static class KnownClass<P extends Phone<M>, M extends MobileOS> implements
+        UnknownClass<P,M> {
+
+        P phone  = null;
+        M os = null;
+        int count = 0;
+
+        public KnownClass() {};
+
+        @Override
+        public P set(P ph, M mdl, int cnt) {
+            phone = ph;
+            os = mdl;
+            count = cnt;
+            System.out.println("Setting this KnownClass has: " + phone + " and OS = " + os + " with count = " + count);
+            return ph;
+        };
+
+        @Override
+        public P call()  {
+            System.out.println("Calling this KnownClass has: " + phone + " and OS = " + os + " with count = " + count);
+            return phone;
+        };
+
+    }
+
+
     public static interface Platform<P extends Phone<O>, O extends MobileOS> {
 
         public String set_phone_os_count(P phone, O os, int count);
@@ -160,19 +232,25 @@ public class Test {
         System.out.println("Phone p1 = " + p1);
         System.out.println("Phone p2 = " + p2);
 
-        // Play with Lambda 
-       
+        // Play with Lambda Expressions and Functional Interfaces and Anonymous Classes 
+        // as Anonymous Functions with Generic Types
+
         // no parameter and a single expression
+
         Dummy d1 = 
             () -> System.out.println("No parameter single expression lambda expression");
         d1.show_msg();
 
+
         // no parameter and a single body 
+
         Runnable r1 =
             () -> { int x=0; x++; System.out.println("No parameter and a single body with x = " + x); };
         r1.run();
 
+
         // no parameter and a single body with return type
+
         Callable<Integer> c1 =
             () -> { 
                 int y=3; 
@@ -183,24 +261,30 @@ public class Test {
             System.out.print("y = " + i1);
         } catch (Exception ex1) {
             ex1.printStackTrace();
-        }
+        };
+
 
         // a single parameter with explicit type and a single expression
+
         Display display1 = (String m) -> "A lambda with one explicitly typed parameter " + m;
         display1.show_msg(" in a single expression"); 
 
+
         // a single parameter with inferred type and a single expression
+
         String msg = "A single parameter with explicit type and single lambda expression";
         Display display2 = (m) -> "This example has " + m;
         display2.show_msg(msg);
+
  
         // three parameters with inferred types and a single body
+
         int count = 10;
         String rc1 = "";
         Platform<Phone<iOS>,iOS> platform1 = (ph, os, cnt) -> { 
             ph.set_model(""+os);
             String m = "I bought " + cnt + " smart phone of the same type: " + ph;
-            System.out.println("I bought " + cnt + " smart phone: " + ph);
+            System.out.println("" + m);
             return m;
         };
         rc1 = platform1.set_phone_os_count(p2, ios1, count); 
@@ -209,12 +293,69 @@ public class Test {
         Platform<Phone<Android>,Android> platform2 = (ph, os, cnt) -> {
             ph.set_model(""+os);
             String m = "I bought " + cnt + " smart phone of the same type: " + ph;
-            System.out.println("I bought " + cnt + " smart phone: " + ph);
+            System.out.println("" + m);
             return m;
         };
         count = 20;
         rc1 = platform2.set_phone_os_count(p1, android1, count); 
         System.out.println("The return value is: " + rc1);
+
+
+        // multiple parameters with anonymous classes and generic types
+
+        InvocableClass<UnknownClass<Phone<iOS>,iOS>,Phone<iOS>,iOS> invoke1 = 
+            new InvocableClass<UnknownClass<Phone<iOS>,iOS>,Phone<iOS>,iOS>() {
+ 
+                @Override
+                public Phone<iOS> set(UnknownClass<Phone<iOS>,iOS> uc1, Phone<iOS> ph1) {
+                    Phone<iOS> phone1 = super.set(uc1, ph1); 
+                    phone1 = uc1.set(ph1, ios1, 1);
+                    System.out.println("Setting this InvocableClass has uc1 = " + uc1 + " and phone1 = " + phone1);
+                    return phone1;
+                };
+
+            };
+
+        Phone<iOS> ph2 = invoke1.set(new UnknownClass<Phone<iOS>,iOS>() {
+
+            Phone<iOS> phone = null;
+            iOS ios = null;
+            int count =  33;
+
+            @Override
+            public Phone<iOS> call() {
+                phone = null;
+                ios = null;
+                count =  33;
+                System.out.println("Calling this UnknownClass has phone = " + phone + " and OS = " + ios + " and count = " + count);
+                return phone;
+            };
+
+            @Override
+            public Phone<iOS> set(Phone<iOS> ph, iOS os, int cnt) {
+                phone = ph;
+                ios = os;
+                count += cnt;
+                System.out.println("Setting this UnknownClass has phone = " + phone + " and OS = " + ios + " and count = " + count);
+                return ph;
+            };
+
+        }, p2);
+
+        ph2 = invoke1.call();
+        System.out.println("The return phone object is: " + ph2);
+
+      
+        // generic types with multiple parameters in an anonymous (lambda) function
+
+        Contactable<Phone<Android>,Android> contact1 = (ph, os) -> {
+            ph.set_model(""+os);
+            String m = "I am phoning using a smart phone of the same type: " + ph + " with OS = " + os;
+            System.out.println("" + m);
+            return ph;
+        };
+        Phone<Android> phone1 = contact1.call(p1, android1);
+        System.out.println("The return Phone object is: " + phone1);
 
     }
 

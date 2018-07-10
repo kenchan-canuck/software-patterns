@@ -5,7 +5,8 @@ interfaces that illustrate the application of generic types with
 lambda expressions.
 
      The value of this sample code is to show various scenarios 
-that generic types and lambda expressions can work together.
+that generic types and anonymous classes and functional interfaces
+and lambda expressions can work together.
 
 
 Contact Information
