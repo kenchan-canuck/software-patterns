@@ -32,8 +32,8 @@ Getting Started
 ===============
 
     This repository contains sample codes in various programming
-languages (e.g Java, Scala, Kotlin, C++, Python, Ruby, Go, and etc) 
-to implement a variety of Software Patterns using a variety of 
+languages (e.g Java, Scala, Kotlin, C++, Python, Ruby, Go, Swift, C#,
+and etc) to implement a variety of Software Patterns using a variety of 
 more advanced programming linguistic features.  Many code samples 
 use Generic Types and nested inner classes along with popular data 
 structures to realize a variety of Software Patterns.  Some of the 
