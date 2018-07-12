@@ -2,11 +2,12 @@ Purpose
 =======
     These files contain sample java codes with java classes and
 interfaces that illustrate the application of recursive generic types
-to implement the Builder Pattern with multiple inherited classes. 
+to implement the Builder Pattern with multiple inherited classes
+and subtypes. 
 
     The benefit of these sample codes is that it is possible to 
 implement Builder Pattern with multiple inherited classes using 
-recursive generic types.
+multiple subtypes and recursive generic types.
 
 
 Contact Information

@@ -29,14 +29,12 @@ import java.util.*;
 
 public class Sedan extends Car { 
 
-   private String transmission = "manual";
+   private String transmission = "broken";
  
    public static class Builder<T extends Builder<T>> extends Car.Builder<T> { 
-       private String transmission = "manual";
+       private String transmission = "broken";
  
-       public Builder() {
-          super();
-       }
+       public Builder() { super(); }
 
        public T transmission(String _trans) {
            transmission = _trans;
@@ -68,7 +66,10 @@ public class Sedan extends Car {
 
    public static void main(String[] args) {
 
-      Sedan sedan1 = new Sedan.Builder<>().vin(54321).engine("ev engine").transmission("auto").build(); 
+      Sedan sedan1 = new Sedan.Builder<>().vin(54321)
+                                          .engine("ev engine")
+                                          .transmission("auto")
+                                          .build(); 
       System.out.println("1- sedan1 has " + sedan1);
 
    }

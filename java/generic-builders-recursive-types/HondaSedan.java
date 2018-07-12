@@ -36,8 +36,7 @@ public class HondaSedan extends Sedan {
 
        private String has4wd = "not sure";
  
-       public Builder() {
-       }
+       public Builder() {}
 
        public T has4wd(String _has4wd) {
            has4wd = _has4wd;
@@ -69,7 +68,11 @@ public class HondaSedan extends Sedan {
 
    public static void main(String[] args) {
 
-      HondaSedan honda_sedan1 = new HondaSedan.Builder<>().vin(98765).engine("hybrid engine").transmission("auto").has4wd("no-4wd").build(); 
+      HondaSedan honda_sedan1 = new HondaSedan.Builder<>().vin(98765)
+                                                          .engine("hybrid engine")
+                                                          .transmission("auto")
+                                                          .has4wd("no-4wd")
+                                                          .build(); 
       System.out.println("1- honda_sedan1 has " + honda_sedan1);
 
    }

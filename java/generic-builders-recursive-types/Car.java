@@ -30,12 +30,12 @@ import java.util.*;
 public class Car { 
 
    private long vin = 0;
-   private String engine = "engine";
+   private String engine = "bad";
  
    public static class Builder<T extends Builder<T>> {
 
        private long vin = 0;
-       private String engine = "engine";
+       private String engine = "bad";
  
        public Builder() {
           
@@ -76,7 +76,9 @@ public class Car {
 
    public static void main(String[] args) {
 
-      Car car1 = new Car.Builder<>().vin(12345).engine("gas engine").build();
+      Car car1 = new Car.Builder<>().vin(12345)
+                                    .engine("gas engine")
+                                    .build();
 
       System.out.println("car1 has " + car1);
    }
