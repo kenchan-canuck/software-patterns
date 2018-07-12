@@ -15,12 +15,14 @@ or architectural patterns that are very useful to experienced developers.
 Motivations
 ===========
 
-    If Software Patterns are used properly, they tend to make their codes 
-more concise (fewer lines of codes), to avoid re-invent the wheels (reuse),
-to code faster, to reduce bugs, and to increase run-time performance.
+    If a developer uses software patterns properly in his or her code, he or
+she would be able to make the code more concise (fewer lines of codes), 
+to avoid re-invent the wheels (reuse), to code faster, to reduce bugs, and 
+to increase run-time performance.
 
-    As an active developer, he was frustrated with random sample codes on 
-the Internet (e.g. academic web pages, stackoverflow, developer blogs).
+    As an active developer, the primary developer was frustrated with random 
+sample codes on the Internet (e.g. academic web pages, stackoverflow, developer 
+blogs).
 
     Although he usually found some good quality answers on the Internet, 
 it often took a lot longer than he would like. He also could not find any 
