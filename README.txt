@@ -28,7 +28,7 @@ Motivations
 Benefits
 ========
 
-    YOUR CONTRIBUTIONS ARE MOST WELCOME!
+    This repository provides developers with fully compilable and fully working (functional with no error) sample (reference) codes for more advanced programming linguistic features and common software patterns.
 
     However, the creator of this repository recommends all the contributors to develop sample codes that are unique and more "sophisticated" than other simpler sample codes found on the Internet and eBooks.
 
