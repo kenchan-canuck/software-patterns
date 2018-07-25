@@ -37,18 +37,25 @@ public class Test {
 
        String get_kernel_type();
        void set_kernel_type(String type);
+       Display get_display();
+       void set_display(Display display);
+       String show_msg(String msg);
 
     }
 
-    public static class MobileOS implements OS {
+    public static abstract class MobileOS implements OS {
 
-        String kernel_type = "unknown";
+        public String kernel_type = "unknown";
+        public Display display = null;
 
         public MobileOS() {}
 
         public String get_kernel_type() { return kernel_type; }
         public void set_kernel_type(String type) { kernel_type = type; }
        
+        public Display get_display() { return this.display; }
+        public void set_display(Display display) { this.display = display; }
+
         public String toString() { return "this MobileOS has this kernel type: " + kernel_type; }
 
     }
@@ -61,6 +68,8 @@ public class Test {
 
         public boolean is_support_face_id() { return support_face_id; }
         public void set_support_face_id(boolean flag) { support_face_id = flag; }
+
+        public String show_msg(String msg) { return ""; };
 
         public String toString() { return "this iOS supports face_id = " + support_face_id; }
 
@@ -76,6 +85,8 @@ public class Test {
         public String get_device_mfr() { return device_mfr; }
         public void set_device_mfr(String brand) { device_mfr = brand; }
 
+        public String show_msg(String msg) { return ""; };
+
         public String toString() { return "this Android runs on this device made by: " + device_mfr; }
 
     } 
@@ -88,7 +99,7 @@ public class Test {
 
     public static interface Display {
 
-        public String show_msg(String msg);
+        public String display_msg(String msg);
 
     }
 
@@ -238,7 +249,7 @@ public class Test {
         // no parameter and a single expression
 
         Dummy d1 = 
-            () -> System.out.println("No parameter single expression lambda expression");
+            () -> System.out.println("No parameter single expression lambda ");
         d1.show_msg();
 
 
@@ -267,14 +278,14 @@ public class Test {
         // a single parameter with explicit type and a single expression
 
         Display display1 = (String m) -> "A lambda with one explicitly typed parameter " + m;
-        display1.show_msg(" in a single expression"); 
+        display1.display_msg(" in a single expression"); 
 
 
         // a single parameter with inferred type and a single expression
 
         String msg = "A single parameter with explicit type and single lambda expression";
         Display display2 = (m) -> "This example has " + m;
-        display2.show_msg(msg);
+        display2.display_msg(msg);
 
  
         // three parameters with inferred types and a single body
@@ -356,6 +367,28 @@ public class Test {
         };
         Phone<Android> phone1 = contact1.call(p1, android1);
         System.out.println("The return Phone object is: " + phone1);
+
+        // generic types with multiple parameters in a function interface
+
+        Contactable<Phone<Android>,Android> contact2 = (ph, os) -> {
+
+            ph.set_model(""+os);
+            
+            String m = "I am phoning using a smart phone of the same type: " + ph + " with OS = " + os;
+            System.out.println("" + m);
+
+            Display disp1 = (String x) -> { 
+               String str1 = "Who is the boss? " + x;
+               System.out.println("Use functional interface and lambda with a parameter - " + str1);
+               return str1;
+            };
+            disp1.display_msg("Google");
+
+            return ph;
+
+        };
+        Phone<Android> phone2 = contact2.call(p1, android1);
+        System.out.println("The return Phone object is: " + phone2);
 
     }
 
